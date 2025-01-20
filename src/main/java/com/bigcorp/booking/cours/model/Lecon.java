@@ -3,22 +3,12 @@ package com.bigcorp.booking.cours.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-
-@Entity
 public class Lecon {
 	
-	@Id
-	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private Long id;
 
 	private String titre;
 	
-	@OneToMany(mappedBy = "lecon")
 	private Set<Example> examples = new HashSet<>();
 
 	public String getTitre() {
