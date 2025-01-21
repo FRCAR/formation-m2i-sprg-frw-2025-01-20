@@ -9,6 +9,12 @@ import org.springframework.context.annotation.PropertySource;
 
 import com.bigcorp.booking.cours.core.service.EmployeeService;
 
+/**
+ * Bean de configuration : fournit à Spring
+ * des configurations par annotations
+ * et d'autres beans dans le contexte grâce aux méthodes
+ * annotées avec @Bean
+ */
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan({"com.bigcorp.booking.cours.core.service", "com.bigcorp.booking.cours.core.aspect"})

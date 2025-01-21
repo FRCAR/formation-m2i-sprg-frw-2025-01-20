@@ -6,9 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+/**
+ * Classe de Service, sera instanciée par Spring
+ * car elle est annotée avec @Service (interchangeable avec @Component)
+ */
 @Service
 public class CompanyService {
 
+    //${} demande à Spring de transformer la chaîne de caractères
+    //(une clé) en sa valeur, qui vient sans doute d'un fichier de propriétés
     @Value("${companyservice.maxcompanyid}")
     private Integer maxCompanyId;
 
@@ -19,9 +25,8 @@ public class CompanyService {
 
     public String getName() {
         try {
-            Thread.sleep(4_000);
+            Thread.sleep(2_000);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return name;
