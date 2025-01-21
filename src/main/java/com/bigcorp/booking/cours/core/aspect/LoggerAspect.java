@@ -7,8 +7,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
-@Aspect // Il servira d’aspect
-@Component // Le bean sera placé dans le contexte Spring
+@Aspect
+@Component
 public class LoggerAspect {
     @Before("execution(public * com.bigcorp.booking.cours.core.service.*.*(..))")
     // pointcut : la cible à exécuter
@@ -24,8 +24,8 @@ public class LoggerAspect {
         System.out.println("Une méthode a été appelée, et a renvoyé : " + machin);
     }
 
-    //Advice 'autour' des méthodes de la classe SlowService
-    @Around("execution(public * com.bigcorp.booking.cours.core.service.SlowService.*(..))")
+    // Advice 'autour' des méthodes de la classe SlowService
+    @Around("execution(public * com.bigcorp.booking.cours.core.service.CompanyService.*(..))")
     public Object doBasicProfiling(ProceedingJoinPoint pjp) throws Throwable {
         System.out.println("La méthode va s'exécuter !!!");
         long startTime = System.currentTimeMillis();
