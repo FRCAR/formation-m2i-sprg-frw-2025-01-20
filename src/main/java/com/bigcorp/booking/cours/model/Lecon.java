@@ -35,9 +35,5 @@ public class Lecon {
 		this.examples = examples;
 	}
 
-	public void associateWith(Example example) {
-		this.examples.add(example);
-		example.setLecon(this);
-	}
 	
 }

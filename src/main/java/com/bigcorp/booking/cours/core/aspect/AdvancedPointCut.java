@@ -15,6 +15,11 @@ public class AdvancedPointCut {
         System.out.println("Utilisation de pointcut enregistré avec @Pointcut avant la méthode.");
     }
 
+    @Before("execution(public * *(..)) && beanOrderService()")
+    public void logBeforeOrderService() {
+        System.out.println("Une méthode de OrderService a été appelée.");
+    }
+
     public void logAfter() {
         System.out.println("Utilisation de pointcut enregistré avec @Pointcut avant la méthode.");
     }
@@ -25,6 +30,11 @@ public class AdvancedPointCut {
 
     @Pointcut("within(com.bigcorp.booking.cours.core.service.*)")
     public void withinMyServices() {
+
+    }
+
+    @Pointcut("bean(orderService)")
+    public void beanOrderService() {
 
     }
 

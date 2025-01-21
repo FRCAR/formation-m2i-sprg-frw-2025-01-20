@@ -1,67 +1,52 @@
 package com.bigcorp.booking.cours.model;
 
-public class Example  {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-	private Long id;
-	
-	private String nom;
-	
-	private Float taille;
-	
-	private Severite severite;
-	
-	private Lecon lecon;
-	
-	public Long getId() {
-		return id;
-	}
+@Entity
+public class Example {
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
 
-	public String getNom() {
-		return nom;
-	}
+    private String nom;
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    private Float taille;
 
-	public Float getTaille() {
-		return taille;
-	}
+    // private Severite severite;
 
-	public void setTaille(Float taille) {
-		this.taille = taille;
-	}
+    // private Lecon lecon;
 
-	public Severite getSeverite() {
-		return severite;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setSeverite(Severite severite) {
-		this.severite = severite;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Lecon getLecon() {
-		return lecon;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public void setLecon(Lecon lecon) {
-		this.lecon = lecon;
-	}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public void associateWith(Lecon lecon) {
-		this.lecon = lecon;
-		lecon.getExamples().add(this);
-	}
+    public Float getTaille() {
+        return taille;
+    }
 
-	@Override
-	public String toString() {
-		return "Example [id=" + id + ", nom=" + nom + "]";
-	}
-	
-	
+    public void setTaille(Float taille) {
+        this.taille = taille;
+    }
+
+    @Override
+    public String toString() {
+        return "Example [id=" + id + ", nom=" + nom + "]";
+    }
 
 }
