@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Page des avions</title>
+</head>
+
+<body>
+    <div> Bienvenue sur la page des avions</div>
+    <ul>
+        <li th:each="plane : ${planes}">
+            <a href="vue-plane.html" th:href="@{/planes/{planeId}(planeId=${plane.id})}">
+                <span th:text="${plane.id}"></span>
+                <span th:text="${plane.name}"></span>
+            </a>
+        </li>
+    </ul>
+</body>
+
+</html>

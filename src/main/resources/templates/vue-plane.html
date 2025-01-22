@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title  th:text="#{plane.title}">Gestion des avions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1>Page de gestion des avions</h1>
+	<div>
+		<p>Formulaire de sauvegarde</p>
+		<form action="planes" th:action="@{/planes}" th:object="${plane}" method="post">
+			<p>Id :</p>
+			<p>
+				<input type="text" name="id" th:value="${plane.id}" />
+			</p>
+			<p>Nom :</p>
+			<p>
+				<input type="text" name="name" th:value="${plane.name}" />
+			</p>
+			<input type="submit" value="Sauvegarder" />
+			<ul th:if="${#fields.hasErrors('*')}">
+				<li th:each="err : ${#fields.detailedErrors()}"
+					th:text="${err.fieldName + '-' + err.message}">Erreur</li>
+			</ul>
+		</form>
+	</div>
+</body>
+</html>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class MonPremierControleurHtml {
+public class SalutControleurHtml {
 
     @ModelAttribute("dateEtHeureDuJour")
     public String getDateEtHeureDuJour() {
@@ -19,4 +19,5 @@ public class MonPremierControleurHtml {
     public String getVueSalut() {
         return "vue-salut";
     }
+
 }

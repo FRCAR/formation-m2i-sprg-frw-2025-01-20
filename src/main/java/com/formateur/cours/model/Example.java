@@ -8,6 +8,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Example {
@@ -16,10 +18,12 @@ public class Example {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
+    @Email
     private String nom;
 
     private Float taille;
 
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Severite severite;
 

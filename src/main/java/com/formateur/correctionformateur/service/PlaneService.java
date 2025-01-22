@@ -37,4 +37,8 @@ public class PlaneService {
     public List<Plane> findByNameAndModelOrderByName(String name, String model){
         return this.planeDao.findByNameAndModelOrderByName(name, model);
     }
+
+    public Iterable<Plane> findAll() {
+        return this.planeDao.findAll();
+    }
 }
